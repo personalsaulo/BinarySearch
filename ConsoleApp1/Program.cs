@@ -41,18 +41,20 @@ namespace ConsoleApp1
 
         public static Boolean buscaBinaria(int[] vetor, int valorAlvo, int inicio, int fim)
         {
+            if (inicio > fim)
+                return false;
 
             int meio = (inicio + fim) / 2;
+
             if (vetor[meio] == valorAlvo)
                 return true;
             else if (valorAlvo < vetor[meio])
                 return buscaBinaria(vetor, valorAlvo, inicio, meio - 1);
             else
-                return buscaBinaria(vetor, valorAlvo, inicio, meio + 1);
+                return buscaBinaria(vetor, valorAlvo, meio + 1, fim);
 
 
-
-        }
+       }
 
     }
 }
